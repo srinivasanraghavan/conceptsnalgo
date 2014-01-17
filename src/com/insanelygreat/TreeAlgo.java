@@ -162,6 +162,14 @@ public class TreeAlgo {
 
 		}
 
+		public boolean hasSubtree() {
+			return hasSubTreeRecurse(root);
+		}
+
+		private boolean hasSubTreeRecurse(TreeNode<T> root) {
+
+		}
+
 		/**
 		 * 
 		 * @param node
