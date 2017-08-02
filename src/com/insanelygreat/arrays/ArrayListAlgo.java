@@ -4,126 +4,136 @@ import com.insanelygreat.List;
 
 public class ArrayListAlgo {
 
-	public static boolean isHavingDuplicates(String str) {
+    public static boolean isHavingDuplicates(String str) {
 
-		boolean[] bs = new boolean[256];
+        boolean[] bs = new boolean[256];
 
-		for (int i = 0; i < str.length(); i++) {
+        for (int i = 0; i < str.length(); i++) {
 
-			char c = str.charAt(i);
-			if (bs[c]) {
-				return false;
+            char c = str.charAt(i);
+            if (bs[c]) {
+                return false;
 
-			} else {
-				bs[c] = true;
-			}
+            } else {
+                bs[c] = true;
+            }
 
-		}
-		return true;
+        }
+        return true;
 
-	}
+    }
 
-	/**
-	 * Very important has some easy sol in c look in java 
-	 * 
-	 * @param string
-	 */
-	public void permute(String string) {
+    /**
+     * Write an algorithm to rotate an array
+     */
 
-	}
+    public void rotateAnArray() {
 
-	public void permuteBacktrack(char[] array, int i, int n) {
+        char[] word={'a','b','c','d'};
 
-	}
 
-	private void swap(int a, int b) {
-		int temp = a;
-		a = b;
-		b = temp;
-	}
 
-	public static char[] removeDuplictatesWithBuffer(String str) {
+    }
 
-		boolean[] bs = new boolean[256];
-		char[] chars = str.toCharArray();
-		bs[chars[0]] = true;
-		int tail = 1;
-		for (int i = 1; i < chars.length; i++) {
-			char c = chars[i];
-			if (!bs[c]) {
-				chars[tail] = c;
-				++tail;
-				bs[c] = true;
+    /**
+     * Very important has some easy sol in c look in java
+     *
+     * @param string
+     */
+    public void permute(String string) {
 
-			}
+    }
 
-		}
-		chars[tail] = 0;
-		return chars;
+    public void permuteBacktrack(char[] array, int i, int n) {
 
-	}
+    }
 
-	public static boolean checkPalindrome(String str) {
+    private void swap(int a, int b) {
+        int temp = a;
+        a = b;
+        b = temp;
+    }
 
-		int length = str.length();
-		int middle = length / 2;
+    public static char[] removeDuplictatesWithBuffer(String str) {
 
-		boolean flag = false;
-		for (int i = 0; i < middle; i++) {
+        boolean[] bs = new boolean[256];
+        char[] chars = str.toCharArray();
+        bs[chars[0]] = true;
+        int tail = 1;
+        for (int i = 1; i < chars.length; i++) {
+            char c = chars[i];
+            if (!bs[c]) {
+                chars[tail] = c;
+                ++tail;
+                bs[c] = true;
 
-			if (str.charAt(i) == str.charAt((length - 1) - i)) {
+            }
 
-				flag = true;
-			}
+        }
+        chars[tail] = 0;
+        return chars;
 
-			else {
-				flag = false;
-				break;
-			}
-		}
-		return flag;
+    }
 
-	}
+    public static boolean checkPalindrome(String str) {
 
-	static void printArr(char s[], int i, int j) {
-		while (i <= j)
-			System.out.print(s[i++]);
-		System.out.println();
-	}
+        int length = str.length();
+        int middle = length / 2;
 
-	public static void palindromes(char s[]) {
-		int i, j, L, H;
-		L = 0;
-		H = s.length - 1;
-		for (i = L; i <= H; i++) {
-			// odd palindromes with i at center
-			for (j = 1; i - j >= L && i + j <= H && s[i - j] == s[i + j]; j++)
-				;
-			if (j > 1) {
-				printArr(s, i - j + 1, i + j - 1);
-			}
-			// even palindromes, no-center
-			for (j = 0; i - j >= L && i + j + 1 <= H
-					&& s[i - j] == s[i + j + 1]; j++)
-				;
-			if (j > 0)
-				printArr(s, i - j + 1, i + j);
-		}
-	}
+        boolean flag = false;
+        for (int i = 0; i < middle; i++) {
 
-	public void checkAnagrams(String str1, String str2) {
+            if (str.charAt(i) == str.charAt((length - 1) - i)) {
 
-	}
+                flag = true;
+            } else {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
 
-	public void removeduplicatesWithoutSpace(char[] str) {
-		// if(str == null) {
-		// return;
-		// }
-		// int length = str.length;
-		// else if (length<2){
-		//
-		// }
+    }
 
-	}
+    static void printArr(char s[], int i, int j) {
+        while (i <= j)
+            System.out.print(s[i++]);
+        System.out.println();
+    }
+
+    public static void palindromes(char s[]) {
+        int i, j, L, H;
+        L = 0;
+        H = s.length - 1;
+        for (i = L; i <= H; i++) {
+            // odd palindromes with i at center
+            for (j = 1; i - j >= L && i + j <= H && s[i - j] == s[i + j]; j++)
+                ;
+            if (j > 1) {
+                printArr(s, i - j + 1, i + j - 1);
+            }
+            // even palindromes, no-center
+            for (j = 0; i - j >= L && i + j + 1 <= H
+                    && s[i - j] == s[i + j + 1]; j++)
+                ;
+            if (j > 0)
+                printArr(s, i - j + 1, i + j);
+        }
+    }
+
+    public void checkAnagrams(String str1, String str2) {
+
+    }
+
+    public void removeduplicatesWithoutSpace(char[] str) {
+        // if(str == null) {
+        // return;
+        // }
+        // int length = str.length;
+        // else if (length<2){
+        //
+        // }
+
+    }
 
 }
