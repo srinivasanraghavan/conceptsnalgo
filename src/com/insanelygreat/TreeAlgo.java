@@ -167,7 +167,7 @@ public class TreeAlgo {
 		}
 
 		private boolean hasSubTreeRecurse(TreeNode<T> root) {
-
+			return false;
 		}
 
 		/**
@@ -289,6 +289,8 @@ public class TreeAlgo {
 			}
 
 		}
+
+
 
 	}
 
