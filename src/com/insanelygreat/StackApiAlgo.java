@@ -20,4 +20,7 @@ public class StackApiAlgo {
 			stack.push(temp);
 		}
 	}
+
+
+
 }

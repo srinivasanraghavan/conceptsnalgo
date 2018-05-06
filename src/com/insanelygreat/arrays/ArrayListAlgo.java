@@ -3,6 +3,8 @@ package com.insanelygreat.arrays;
 import com.insanelygreat.List;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class ArrayListAlgo {
 
@@ -137,6 +139,124 @@ public class ArrayListAlgo {
     }
 
 
+    /**
+     * Find subarray.
+     *
+     * @return
+     */
+
+    public static void findSubArrayOfSum() {
+        int[] A = {1, 4, 2, 1};
+        int sum = 6;
+        int curr_sum = A[0], start = 0;
+
+        for (int i = 1; i < A.length; i++) {
+
+            while (curr_sum > sum && start < i - 1) {
+                curr_sum = curr_sum - A[start];
+                start++;
+            }
+            if (curr_sum == sum) {
+                int p = i - 1;
+                System.out.print("Sub array is found between " + start + "and " + p);
+
+            }
+            if (i < A.length) {
+                curr_sum = curr_sum + A[i];
+            }
+        }
+
+    }
+
+    /**
+     * Three way Partion problem
+     * <p>
+     * Dutch National Flag Problem
+     * <p>
+     * <p>
+     * <p>
+     * O(n) solution
+     * <p>
+     * take three varaible
+     * <p>
+     * init i =0 , j = size of array
+     * and mid = 0
+     *
+     * @param str
+     * @return
+     */
+
+    public static void dutchNationalFlagProblem() {
+        int A[] = {0, 2, 1, 1, 1, 1, 0, 0, 2, 2};
+        int lo = 0;
+        int hi = A.length - 1;
+        int mid = 0;
+
+        while (mid <= hi) {
+            switch ((A[mid])) {
+
+                case 0:
+                    swap(A, lo++, mid++);
+                    break;
+                case 1:
+                    mid++;
+                    break;
+                case 2:
+                    swap(A, mid, hi--);
+                    break;
+
+            }
+
+        }
+
+        for (int a : A) {
+            System.out.print(a);
+        }
+
+    }
+
+    /**
+     * Modification of the dutch national flag problem
+     */
+    public static void sortosand1s() {
+
+        int A[] = {0, 1, 1, 1, 1, 1, 0, 0, 0, 0};
+        int lo = 0;
+        int hi = A.length - 1;
+
+        while (lo < hi) {
+            switch ((A[lo])) {
+
+                case 0:
+                    lo++;
+                    break;
+                case 1:
+                    swap(A, lo, hi--);
+                    break;
+            }
+
+        }
+
+        for (int a : A) {
+            System.out.print(a);
+        }
+    }
+
+    /**
+     * Find the equilibrium point in an array
+     *
+     * @param str
+     * @return
+     */
+
+    public static void findEquilibriumPoint() {
+        int A[] = {0, 2, 1, 1, 1, 1, 0, 0, 2, 2};
+
+        int totalSum = IntStream.of(A).sum();
+
+
+    }
+
     public static boolean isHavingDuplicates(String str) {
 
         boolean[] bs = new boolean[256];
@@ -180,10 +300,11 @@ public class ArrayListAlgo {
 
     }
 
-    private void swap(int a, int b) {
-        int temp = a;
-        a = b;
-        b = temp;
+    private static void swap(int[] A, int a, int b) {
+        int temp = A[a];
+        A[a] = A[b];
+        A[b] = temp;
+
     }
 
     public static char[] removeDuplictatesWithBuffer(String str) {

@@ -40,10 +40,23 @@ public class ArrayListAlgoTest {
         Stream.of(ArrayListAlgo.maxSubArrayBrute()).forEach(System.out::println);
 
     }
+
     @Test
     public void testMaxSubArrayDynamic() {
 
         System.out.print(ArrayListAlgo.maxSubArrayDynamic());
+
+    }
+
+    @Test
+    public void testDucthNationalFlag() {
+        ArrayListAlgo.dutchNationalFlagProblem();
+
+    }
+
+    @Test
+    public void testOs() {
+        ArrayListAlgo.sortosand1s();
 
     }
 }
